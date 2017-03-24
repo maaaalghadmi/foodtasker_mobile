@@ -2,8 +2,8 @@
 //  LoginViewController.swift
 //  FoodTaskerMobile
 //
-//  Created by Developer on 2017-01-31.
-//  Copyright © 2017 Mohammed Alghamdi. All rights reserved.
+//  Created by Leo Trieu on 9/22/16.
+//  Copyright © 2016 Leo Trieu. All rights reserved.
 //
 
 import UIKit
@@ -11,23 +11,23 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var bLogin: UIButton!
     @IBOutlet weak var bLogout: UIButton!
     
+    
     var fbLoginSuccess = false
     var userType: String = USERTYPE_CUSTOMER
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if (FBSDKAccessToken.current() != nil) {
             
             bLogout.isHidden = false
             FBManager.getFBUserData(completionHandler: {
                 
                 self.bLogin.setTitle("Continue as \(User.currentUser.email!)", for: .normal)
-                //  self.bLogin.sizeToFit()
+                // self.bLogin.sizeToFit()
             })
         }
     }
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func facebookLogout(_ sender: Any) {
+    @IBAction func facebookLogout(_ sender: AnyObject) {
         
         APIManager.shared.logout { (error) in
             
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
                 User.currentUser.resetInfo()
                 
                 self.bLogout.isHidden = true
-                self.bLogin.setTitle("Login with facebook", for: .normal)
+                self.bLogin.setTitle("Login with Facebook", for: .normal)
             }
         }
     }
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
         
         if (FBSDKAccessToken.current() != nil) {
             
-            APIManager.shared.login(usertype: userType, completionHandler: { (error) in
+            APIManager.shared.login(userType: userType, completionHandler: { (error) in
                 if error == nil {
                     self.fbLoginSuccess = true
                     self.viewDidAppear(true)
@@ -66,20 +66,23 @@ class LoginViewController: UIViewController {
             
         } else {
             
-            FBManager.shared.logIn(withReadPermissions: ["public_profile", "email"], from: self, handler: { (result, error) in
-                
-                if (error == nil) {
+            FBManager.shared.logIn(
+                withReadPermissions: ["public_profile", "email"],
+                from: self,
+                handler: { (result, error) in
                     
-                    FBManager.getFBUserData(completionHandler:  {
-                        APIManager.shared.login(usertype: self.userType, completionHandler: { (error) in
-                            if error == nil {
-                                self.fbLoginSuccess = true
-                                self.viewDidAppear(true)
-                        }
-                    })
-                })
-            }
-        })
+                    if (error == nil) {
+                        
+                        FBManager.getFBUserData(completionHandler: {
+                            APIManager.shared.login(userType: self.userType, completionHandler: { (error) in
+                                if error == nil {
+                                    self.fbLoginSuccess = true
+                                    self.viewDidAppear(true)
+                                }
+                            })
+                        })
+                    }
+            })
+        }
     }
-}
 }

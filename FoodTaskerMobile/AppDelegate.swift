@@ -2,20 +2,19 @@
 //  AppDelegate.swift
 //  FoodTaskerMobile
 //
-//  Created by Developer on 2017-01-26.
-//  Copyright © 2017 Mohammed Alghamdi. All rights reserved.
+//  Created by Leo Trieu on 9/20/16.
+//  Copyright © 2016 Leo Trieu. All rights reserved.
 //
 
 import UIKit
 import FBSDKCoreKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -25,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions
+        return FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
         )
     }
     
@@ -38,29 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             annotation: nil
         )
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
-
+        
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
-
+        
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-
+        
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         
         FBSDKAppEvents.activateApp()
-
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
-
+        
     }
-
-
+    
+    
 }
 

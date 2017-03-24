@@ -30,7 +30,7 @@ class RestaurantViewController: UIViewController {
         
         loadRestaurants()
     }
-
+    
     func loadRestaurants() {
         
         showActivityIndicator()

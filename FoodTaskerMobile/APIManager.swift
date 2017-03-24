@@ -1,10 +1,9 @@
-
 //
 //  APIManager.swift
 //  FoodTaskerMobile
 //
-//  Created by Developer on 2017-02-03.
-//  Copyright © 2017 Mohammed Alghamdi. All rights reserved.
+//  Created by Leo Trieu on 9/22/16.
+//  Copyright © 2016 Leo Trieu. All rights reserved.
 //
 
 import Foundation
@@ -22,17 +21,18 @@ class APIManager {
     var refreshToken = ""
     var expired = Date()
     
-    func login(usertype: String, completionHandler: @escaping (NSError?) -> Void) {
+    // API to login an user
+    func login(userType: String, completionHandler: @escaping (NSError?) -> Void) {
         
         let path = "api/social/convert-token/"
-        let url =  baseURL!.appendingPathComponent(path)
+        let url = baseURL!.appendingPathComponent(path)
         let params: [String: Any] = [
             "grant_type": "convert_token",
             "client_id": CLIENT_ID,
             "client_secret": CLIENT_SECRET,
             "backend": "facebook",
             "token": FBSDKAccessToken.current().tokenString,
-            "user_type": usertype
+            "user_type": userType
         ]
         
         Alamofire.request(url!, method: .post, parameters: params, encoding: URLEncoding(), headers: nil).responseJSON { (response) in
@@ -44,12 +44,10 @@ class APIManager {
                 
                 self.accessToken = jsonData["access_token"].string!
                 self.refreshToken = jsonData["refresh_token"].string!
-                self.expired =
-                    Date().addingTimeInterval(TimeInterval(jsonData["expires_in"].int!))
+                self.expired = Date().addingTimeInterval(TimeInterval(jsonData["expires_in"].int!))
                 
                 completionHandler(nil)
                 break
-                
                 
             case .failure(let error):
                 completionHandler(error as NSError?)
@@ -58,6 +56,7 @@ class APIManager {
         }
     }
     
+    // API to log an user out
     func logout(completionHandler: @escaping (NSError?) -> Void) {
         
         let path = "api/social/revoke-token/"
@@ -70,23 +69,26 @@ class APIManager {
         
         Alamofire.request(url!, method: .post, parameters: params, encoding: URLEncoding(), headers: nil).responseString { (response) in
             
-                switch response.result {
-                case .success:
-                    completionHandler(nil)
-                    break
-                    
-                case .failure(let error):
-                    completionHandler(error as NSError?)
-                    break
-                }
+            switch response.result {
+            case .success:
+                completionHandler(nil)
+                break
+                
+            case .failure(let error):
+                completionHandler(error as NSError?)
+                break
             }
+        }
+        
+        
     }
     
+    // API to refresh the token when it's expired
     func refreshTokenIfNeed(completionHandler: @escaping () -> Void) {
         
         let path = "api/social/refresh-token/"
         let url = baseURL?.appendingPathComponent(path)
-        let params : [String: Any] = [
+        let params: [String: Any] = [
             "access_token": self.accessToken,
             "refresh_token": self.refreshToken
         ]
@@ -112,11 +114,10 @@ class APIManager {
         }
     }
     
-    
-    
+    // API - Getting Restaurants list
     func getRestaurants(completionHandler: @escaping (JSON) -> Void) {
         
-        let path = "api/customr/restaurants/"
+        let path = "api/customer/restaurants/"
         let url = baseURL?.appendingPathComponent(path)
         
         refreshTokenIfNeed {
@@ -137,9 +138,4 @@ class APIManager {
         }
     }
     
-
-    func getMeals(restaurantId: Int, completionHandler: @escaping (JSON) -> Void) {
-    
-    }
-
 }

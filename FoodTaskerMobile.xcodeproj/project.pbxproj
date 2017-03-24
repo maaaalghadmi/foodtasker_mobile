@@ -15,7 +15,6 @@
 		8B226CD11E3AAAC300A13449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CD01E3AAAC300A13449 /* AppDelegate.swift */; };
 		8B226CD81E3AAAC300A13449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B226CD71E3AAAC300A13449 /* Assets.xcassets */; };
 		8B226CDB1E3AAAC300A13449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B226CD91E3AAAC300A13449 /* LaunchScreen.storyboard */; };
-		8B226CE51E3AAFE700A13449 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CE41E3AAFE700A13449 /* SWRevealViewController.m */; };
 		8B226CEA1E3ABDD800A13449 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CE91E3ABDD800A13449 /* RestaurantViewController.swift */; };
 		8B226CEC1E3AC34800A13449 /* CustomerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CEB1E3AC34800A13449 /* CustomerMenuTableViewController.swift */; };
 		8B226CEE1E3AFA7A00A13449 /* MealListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CED1E3AFA7A00A13449 /* MealListTableViewController.swift */; };
@@ -23,6 +22,7 @@
 		8B226CF31E3BCE0A00A13449 /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CF21E3BCE0A00A13449 /* MealDetailsViewController.swift */; };
 		8B226CF51E3C0F9500A13449 /* TrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B226CF41E3C0F9500A13449 /* TrayViewController.swift */; };
 		8B226CF81E3C10EC00A13449 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B226CF71E3C10EC00A13449 /* MapKit.framework */; };
+		8B3D1B931E81BCB300C5F8CF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D1B921E81BCB300C5F8CF /* SWRevealViewController.m */; };
 		8B3E7CD01E41512D00F44422 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E7CCF1E41512D00F44422 /* FBManager.swift */; };
 		8B4E03ED1E41548A00055FD6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E03EC1E41548A00055FD6 /* LoginViewController.swift */; };
 		8B4E03EF1E42BAE400055FD6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E03EE1E42BAE400055FD6 /* User.swift */; };
@@ -42,8 +42,6 @@
 		8B226CDA1E3AAAC300A13449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B226CDC1E3AAAC300A13449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B226CE21E3AAFE600A13449 /* FoodTaskerMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodTaskerMobile-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		8B226CE31E3AAFE700A13449 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController.h; sourceTree = "<group>"; };
-		8B226CE41E3AAFE700A13449 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController.m; sourceTree = "<group>"; };
 		8B226CE91E3ABDD800A13449 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		8B226CEB1E3AC34800A13449 /* CustomerMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerMenuTableViewController.swift; sourceTree = "<group>"; };
 		8B226CED1E3AFA7A00A13449 /* MealListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListTableViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		8B226CF21E3BCE0A00A13449 /* MealDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		8B226CF41E3C0F9500A13449 /* TrayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrayViewController.swift; sourceTree = "<group>"; };
 		8B226CF71E3C10EC00A13449 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8B3D1B911E81BCB300C5F8CF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		8B3D1B921E81BCB300C5F8CF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		8B3E7CCE1E414D9100F44422 /* FoodTaskerMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodTaskerMobile.entitlements; sourceTree = "<group>"; };
 		8B3E7CCF1E41512D00F44422 /* FBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
 		8B4E03EC1E41548A00055FD6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		8B226CE61E3AB00800A13449 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				8B226CE31E3AAFE700A13449 /* SWRevealViewController.h */,
-				8B226CE41E3AAFE700A13449 /* SWRevealViewController.m */,
+				8B3D1B911E81BCB300C5F8CF /* SWRevealViewController.h */,
+				8B3D1B921E81BCB300C5F8CF /* SWRevealViewController.m */,
 				8B226CE21E3AAFE600A13449 /* FoodTaskerMobile-Bridging-Header.h */,
 			);
 			name = Lib;
@@ -320,11 +320,11 @@
 				8B226CEA1E3ABDD800A13449 /* RestaurantViewController.swift in Sources */,
 				8B226CEE1E3AFA7A00A13449 /* MealListTableViewController.swift in Sources */,
 				8B226CD11E3AAAC300A13449 /* AppDelegate.swift in Sources */,
+				8B3D1B931E81BCB300C5F8CF /* SWRevealViewController.m in Sources */,
 				8B4E03F71E44D86B00055FD6 /* Constents.swift in Sources */,
 				8B226CEC1E3AC34800A13449 /* CustomerMenuTableViewController.swift in Sources */,
 				8B4E03F51E44D5DF00055FD6 /* APIManager.swift in Sources */,
 				8B175F951E3E65D80053B420 /* PaymentViewController.swift in Sources */,
-				8B226CE51E3AAFE700A13449 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
